@@ -1,0 +1,22 @@
+@model Produtos
+@{
+  ViewData["Title"] = "Deletar Produto";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post" asp-action="DeletePOST">
+  <input asp-for="Id" hidden/>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label" asp-for="Descricao">Descrição do produto</label>
+    <textarea disabled class="form-control" id="exampleFormControlTextarea1" rows="1" asp-for="Descricao"></textarea>
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text">R$</span>
+    <input type="float" class="form-control" asp-for="Preco" disabled>
+    <br>
+  </div>
+
+  <button type="submit" class="btn btn-danger">Deletar</button>
+  <a asp-controller="Produtos" asp-action="Index" class="btn btn-primary">Voltar</a>
+</form>
